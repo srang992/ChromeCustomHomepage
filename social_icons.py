@@ -16,26 +16,26 @@ class SocialIcons(ft.UserControl):
                     CustomIconButton(
                         icon=custom_icons.twitter,
                         color=ft.colors.BLUE_ACCENT,
-                        on_click=lambda _: self.page.launch_url(twitter_url)
+                        url=twitter_url,
                     ),
                     CustomIconButton(
                         icon=custom_icons.github,
                         color=ft.colors.BLUE_ACCENT,
-                        on_click=lambda _: self.page.launch_url(github_url)
+                        url=github_url,
                     ),
                     CustomIconButton(
                         icon=custom_icons.linkedin,
                         color="#0A66C2",
-                        on_click=lambda _: self.page.launch_url(linkedin_url)
+                        url=linkedin_url,
                     ),
                     CustomIconButton(
                         icon=custom_icons.medium,
                         color=ft.colors.GREEN,
-                        on_click=lambda _: self.page.launch_url(medium_url)
+                        url=medium_url,
                     ),
                     CustomIconButton(
                         icon=custom_icons.analyticsvidhya,
-                        on_click=lambda _: self.page.launch_url(analyticsvidhya_url)
+                        url=analyticsvidhya_url,
                     ),
                 ],
                 spacing=25,
