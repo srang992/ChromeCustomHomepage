@@ -15,6 +15,14 @@ def main(page: ft.Page):
     page.add(
         ft.Column(
             [
+                ft.Column(
+                    [
+                        ft.Image(custom_icons.my_logo, width=200, height=100),
+                        ft.Text("Workspace", size=18, font_family="Courgette", color=ft.colors.GREY),
+                    ],
+                    spacing=5,
+                    horizontal_alignment=ft.CrossAxisAlignment.CENTER
+                ),
                 SearchBar(),
                 ft.Column(
                     [
@@ -48,12 +56,6 @@ def main(page: ft.Page):
                                     icon_size=24,
                                     url=medium_editor_url
                                 ),
-                            ],
-                            wrap=True,
-                            alignment=ft.MainAxisAlignment.CENTER
-                        ),
-                        ft.Row(
-                            [
                                 BookmarkCard(
                                     icon=custom_icons.gmail,
                                     text="Gmail",
@@ -73,6 +75,7 @@ def main(page: ft.Page):
                                     url=flet_url
                                 ),
                             ],
+                            width=500,
                             wrap=True,
                             alignment=ft.MainAxisAlignment.CENTER
                         ),
