@@ -1,5 +1,5 @@
 import flet as ft
-from custom_icon import CustomIcon
+from components.others.icon_control.custom_icon import CustomIcon
 
 
 class BookmarkCard(ft.UserControl):

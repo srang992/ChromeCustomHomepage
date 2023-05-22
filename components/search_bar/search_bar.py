@@ -22,6 +22,10 @@ class SearchBar(ft.UserControl):
         else:
             self.page.launch_url(f"https://www.google.com/search?q={search_text}")
 
+    def on_click_cancel(self, _):
+        self.search_field.current.value = None
+        self.update()
+
     def build(self):
         return ft.Container(
             content=ft.Row(
@@ -34,7 +38,7 @@ class SearchBar(ft.UserControl):
                         text_style=ft.TextStyle(font_family="Alkatra"),
                         expand=True,
                     ),
-                    ft.IconButton(ft.icons.SEARCH, on_click=self.on_press_enter)
+                    ft.IconButton(ft.icons.CANCEL, on_click=self.on_click_cancel)
                 ],
             ),
             shadow=ft.BoxShadow(
