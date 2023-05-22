@@ -8,6 +8,7 @@ from bookmark_card import BookmarkCard
 
 
 def main(page: ft.Page):
+    page.title = "Subhradeep's Custom Homepage"
     page.fonts = fonts
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.vertical_alignment = ft.MainAxisAlignment.CENTER

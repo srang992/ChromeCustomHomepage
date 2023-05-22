@@ -29,20 +29,20 @@ class SearchBar(ft.UserControl):
                     ft.Image(custom_icons.google, width=24, height=24),
                     ft.TextField(
                         border=ft.InputBorder.NONE,
-                        width=300,
                         ref=self.search_field,
                         on_submit=self.on_press_enter,
-                        text_style=ft.TextStyle(font_family="Alkatra")
+                        text_style=ft.TextStyle(font_family="Alkatra"),
+                        expand=True,
                     ),
                     ft.IconButton(ft.icons.SEARCH, on_click=self.on_press_enter)
                 ],
-                wrap=True
             ),
             shadow=ft.BoxShadow(
                 blur_style=ft.ShadowBlurStyle.OUTER,
                 blur_radius=5,
                 color=ft.colors.with_opacity(0.5, "grey")
             ),
+            width=400,
             border_radius=10,
             padding=ft.padding.only(left=18, top=6, right=6, bottom=6),
         )
