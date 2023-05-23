@@ -22,7 +22,7 @@ def main(page: ft.Page):
                 Socials(),
                 Bookmarks(),
             ],
-            spacing=40,
+            spacing=35,
             alignment=ft.MainAxisAlignment.CENTER,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER
         )
@@ -43,14 +43,14 @@ def main(page: ft.Page):
         else:
             if page.controls:
                 page.controls.pop()
-            page.controls.append(lv)
+            page.controls.append(content)
 
         page.update()
 
     page.on_resize = on_resize
 
     page.add(
-        lv
+        content
     )
 
 
