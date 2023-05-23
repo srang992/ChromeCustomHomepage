@@ -23,11 +23,12 @@ class BookmarkCard(ft.UserControl):
                         ),
                         ft.Text(self.text, size=16, font_family="Alkatra")
                     ],
-                    wrap=True,
+                    # wrap=True,
+                    width=200
                 ),
                 style=ft.ButtonStyle(
                     padding=18,
-                    shape=ft.RoundedRectangleBorder(radius=10),
+                    shape=ft.RoundedRectangleBorder(radius=5),
                 ),
                 url=self.url
             ),

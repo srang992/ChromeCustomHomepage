@@ -12,7 +12,10 @@ def main(page: ft.Page):
     page.fonts = fonts
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
-    page.add(
+
+    lv = ft.ListView(expand=1, spacing=10, padding=10)
+
+    lv.controls.append(
         ft.Column(
             [
                 PageHeader(),
@@ -23,6 +26,10 @@ def main(page: ft.Page):
             spacing=40,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER
         )
+    )
+
+    page.add(
+        lv
     )
 
 
