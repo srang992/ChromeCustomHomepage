@@ -3,6 +3,9 @@ from components.others.icon_control.custom_icon import CustomIcon
 
 
 class BookmarkCard(ft.UserControl):
+
+    bookmark_card_content = ft.Ref[ft.Row]()
+
     def __init__(self, icon, text, icon_size, color=None, url=None):
         super().__init__()
         self.icon = icon
@@ -23,8 +26,7 @@ class BookmarkCard(ft.UserControl):
                         ),
                         ft.Text(self.text, size=16, font_family="Alkatra")
                     ],
-                    # wrap=True,
-                    width=200
+                    width=190,
                 ),
                 style=ft.ButtonStyle(
                     padding=18,
@@ -33,3 +35,4 @@ class BookmarkCard(ft.UserControl):
                 url=self.url
             ),
         )
+

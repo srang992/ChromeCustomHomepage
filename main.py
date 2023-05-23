@@ -15,8 +15,7 @@ def main(page: ft.Page):
 
     lv = ft.ListView(expand=1, spacing=10, padding=10)
 
-    lv.controls.append(
-        ft.Column(
+    content = ft.Column(
             [
                 PageHeader(),
                 SearchBar(),
@@ -24,9 +23,31 @@ def main(page: ft.Page):
                 Bookmarks(),
             ],
             spacing=40,
+            alignment=ft.MainAxisAlignment.CENTER,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER
         )
+
+    lv.controls.append(
+        content
     )
+
+    def on_resize(_):
+        if 640 < page.width <= 1080:
+            if page.controls:
+                page.controls.pop()
+            page.controls.append(content)
+        elif page.width <= 640:
+            if page.controls:
+                page.controls.pop()
+            page.controls.append(lv)
+        else:
+            if page.controls:
+                page.controls.pop()
+            page.controls.append(lv)
+
+        page.update()
+
+    page.on_resize = on_resize
 
     page.add(
         lv
