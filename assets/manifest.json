@@ -1,7 +1,8 @@
 {
-  "name": "My Homepage",
-  "short_name": "My Homepage",
+  "name": "SubR's Homepage",
+  "short_name": "SubR's Homepage",
   "start_url": ".",
+  "display": "standalone",
   "icons": [
     {
       "src": "icons/icon-192.png",
