@@ -28,6 +28,6 @@ def main(page: ft.Page):
 
 ft.app(
     target=main,
-    view="web_browser",
-    assets_dir="./assets"
+    view=ft.WEB_BROWSER,
+    assets_dir="assets"
 )

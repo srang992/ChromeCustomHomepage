@@ -3,3 +3,6 @@ hot_reload:
 
 create_dist:
 	flet publish main.py --assets assets
+
+run_dist:
+	python -m http.server --directory dist
