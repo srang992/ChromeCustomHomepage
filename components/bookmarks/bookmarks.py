@@ -51,8 +51,14 @@ class Bookmarks(ft.UserControl):
                             icon_size=24,
                             url=flet_url
                         ),
+                        BookmarkCard(
+                            icon=custom_icons.streamlit,
+                            text="MP4 to GIF",
+                            icon_size=24,
+                            url=mp4_to_gif_url
+                        ),
                     ],
-                    width=500,
+                    width=700,
                     wrap=True,
                     alignment=ft.MainAxisAlignment.CENTER
                 ),
