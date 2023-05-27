@@ -10,14 +10,15 @@ from utils import *
 def main(page: ft.Page):
     page.title = "Subhradeep's Custom Homepage"
     page.fonts = fonts
-    page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
-    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+
+    if page.client_storage.contains_key("dark_or_light"):
+        page.theme_mode = page.client_storage.get("dark_or_light")
 
     lv = ft.ListView(expand=1, spacing=10, padding=10)
 
     content = ft.Column(
             [
-                PageHeader(),
+                PageHeader(page),
                 SearchBar(),
                 Socials(),
                 Bookmarks(),
@@ -31,31 +32,13 @@ def main(page: ft.Page):
         content
     )
 
-    def on_resize(_):
-        if 640 < page.width <= 1080:
-            if page.controls:
-                page.controls.pop()
-            page.controls.append(content)
-        elif page.width <= 640:
-            if page.controls:
-                page.controls.pop()
-            page.controls.append(lv)
-        else:
-            if page.controls:
-                page.controls.pop()
-            page.controls.append(content)
-
-        page.update()
-
-    page.on_resize = on_resize
-
     page.add(
-        content
+        lv
     )
 
 
 ft.app(
     target=main,
     view=ft.WEB_BROWSER,
-    assets_dir="assets"
+    assets_dir="assets",
 )

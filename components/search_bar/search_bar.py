@@ -49,6 +49,7 @@ class SearchBar(ft.UserControl):
                         on_change=self.on_textfield_change,
                         text_style=ft.TextStyle(font_family="Alkatra"),
                         expand=True,
+                        autofocus=True,
                     ),
                     ft.IconButton(
                         ft.icons.CLOSE,
