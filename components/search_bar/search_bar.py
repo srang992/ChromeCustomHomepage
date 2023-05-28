@@ -7,8 +7,9 @@ class SearchBar(ft.UserControl):
     search_field = ft.Ref[ft.TextField]()
     clear_text = ft.Ref[ft.IconButton]()
 
-    def __init__(self):
+    def __init__(self, page):
         super().__init__()
+        self.page = page
 
     def on_press_enter(self, _):
         search_text = "+".join([word for word in self.search_field.current.value.split(" ")])
@@ -35,7 +36,15 @@ class SearchBar(ft.UserControl):
             self.clear_text.current.visible = False
         self.update()
 
+    def on_keyboard_response(self, e: ft.KeyboardEvent):
+        if e.meta == "/":
+            self.search_field.current.focus()
+            self.update()
+
     def build(self):
+
+        self.page.on_keyboard_event = self.on_keyboard_response
+
         return ft.Container(
             content=ft.Row(
                 [

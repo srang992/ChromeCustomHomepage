@@ -1,5 +1,7 @@
 import flet as ft
 import custom_icons
+import pickle
+import os
 
 
 class PageHeader(ft.UserControl):
@@ -15,6 +17,7 @@ class PageHeader(ft.UserControl):
     def on_click_button(self, _):
         self.page.theme_mode = "light" if self.page.theme_mode == "dark" else "dark"
         self.theme_icon.current.icon = self.light_icon if self.page.theme_mode == "light" else self.dark_icon
+        self.page.client_storage.set("dark_or_light", self.page.theme_mode)
         self.update()
         self.page.update()
 
@@ -25,7 +28,7 @@ class PageHeader(ft.UserControl):
                 ft.Row(
                     [
                         ft.IconButton(
-                            icon=self.dark_icon if self.page.theme_mode == "dark" else self.light_icon,
+                            icon=self.light_icon if self.page.theme_mode == "light" else self.dark_icon,
                             ref=self.theme_icon,
                             on_click=self.on_click_button
                         ),
