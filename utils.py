@@ -2,7 +2,7 @@ fonts = {
     "Courgette": "fonts/Courgette-Regular.ttf",
     "Alkatra": "fonts/Alkatra-Regular.ttf"
 }
-col_dict = {"sm": 6, "md": 3, "xl": 3}
+col_dict = {"sm": 6, "md": 4, "xl": 3}
 medium_url = "https://medium.com/@srang992"
 github_url = "https://github.com/srang992"
 linkedin_url = "https://www.linkedin.com/in/srang992/"
