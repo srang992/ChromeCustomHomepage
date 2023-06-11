@@ -11,14 +11,11 @@ def main(page: ft.Page):
     page.title = "Subhradeep's Custom Homepage"
     page.fonts = fonts
 
-    if page.client_storage.contains_key("dark_or_light"):
-        page.theme_mode = page.client_storage.get("dark_or_light")
-
-    lv = ft.ListView(expand=1, spacing=10, padding=10)
+    lv = ft.ListView(expand=1, spacing=10, padding=12)
 
     content = ft.Column(
             [
-                PageHeader(page),
+                PageHeader(),
                 SearchBar(page),
                 Socials(),
                 Bookmarks(),
@@ -40,6 +37,6 @@ def main(page: ft.Page):
 ft.app(
     target=main,
     view=ft.WEB_BROWSER,
-    port=8000,
+    port=8500,
     assets_dir="assets",
 )

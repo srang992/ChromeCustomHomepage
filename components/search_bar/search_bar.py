@@ -1,6 +1,5 @@
 import flet as ft
-import custom_icons
-
+from ionicons_python.extra_icons import google_color_icon
 
 class SearchBar(ft.UserControl):
 
@@ -36,19 +35,11 @@ class SearchBar(ft.UserControl):
             self.clear_text.current.visible = False
         self.update()
 
-    def on_keyboard_response(self, e: ft.KeyboardEvent):
-        if e.meta == "/":
-            self.search_field.current.focus()
-            self.update()
-
     def build(self):
-
-        self.page.on_keyboard_event = self.on_keyboard_response
-
         return ft.Container(
             content=ft.Row(
                 [
-                    ft.Image(custom_icons.google, width=24, height=24),
+                    ft.Image(google_color_icon, width=28, height=28),
                     ft.TextField(
                         border=ft.InputBorder.NONE,
                         ref=self.search_field,

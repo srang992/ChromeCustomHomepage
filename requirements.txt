@@ -1,1 +1,3 @@
 flet
+ionicons-python
+custom-flet
