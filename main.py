@@ -10,27 +10,24 @@ from utils import *
 def main(page: ft.Page):
     page.title = "Subhradeep's Custom Homepage"
     page.fonts = fonts
-
-    lv = ft.ListView(expand=1, spacing=10, padding=12)
+    page.padding = 12
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
     content = ft.Column(
-            [
-                PageHeader(),
-                SearchBar(page),
-                Socials(),
-                Bookmarks(),
-            ],
-            spacing=35,
-            alignment=ft.MainAxisAlignment.CENTER,
-            horizontal_alignment=ft.CrossAxisAlignment.CENTER
-        )
-
-    lv.controls.append(
-        content
+        [
+            PageHeader(),
+            SearchBar(page),
+            Socials(),
+            Bookmarks(),
+        ],
+        spacing=35,
+        expand=True,
+        scroll=ft.ScrollMode.HIDDEN,
+        horizontal_alignment=ft.CrossAxisAlignment.CENTER,
     )
 
     page.add(
-        lv
+        content
     )
 
 

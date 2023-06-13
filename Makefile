@@ -5,7 +5,7 @@ create_dist:
 	flet publish main.py --assets assets
 
 run_dist:
-	python -m http.server --directory dist
+	python -m http.server 8500 --directory dist
 
 docker_img:
 	docker build --tag my-homepage-img .
