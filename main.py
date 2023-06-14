@@ -10,13 +10,15 @@ from utils import *
 def main(page: ft.Page):
     page.title = "Subhradeep's Custom Homepage"
     page.fonts = fonts
-    page.padding = 12
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
     content = ft.Column(
         [
             PageHeader(),
-            SearchBar(page),
+            ft.Container(
+                SearchBar(page),
+                padding=5
+            ),
             Socials(),
             Bookmarks(),
         ],
