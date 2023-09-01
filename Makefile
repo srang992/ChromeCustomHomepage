@@ -11,4 +11,4 @@ docker_img:
 	docker build --tag my-homepage-img .
 
 docker_container:
-	docker run --name MyHomepage -p 3000:8500 my-homepage-img
+	docker run --name MyHomepage -p 8500:8500 my-homepage-img

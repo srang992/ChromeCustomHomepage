@@ -11,11 +11,11 @@ class PageHeader(ft.UserControl):
     def __init__(self):
         super().__init__()
 
-    def on_click_button(self, _):
+    async def on_click_button(self, _):
         self.page.theme_mode = "light" if self.page.theme_mode == "dark" else "dark"
         self.theme_icon.current.icon = self.light_icon if self.page.theme_mode == "light" else self.dark_icon
-        self.update()
-        self.page.update()
+        await self.update_async()
+        await self.page.update_async()
 
     def build(self):
         return ft.Column(
