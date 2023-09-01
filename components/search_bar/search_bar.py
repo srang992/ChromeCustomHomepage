@@ -1,16 +1,19 @@
 import flet as ft
 from ionicons_python.extra_icons import google_color_icon
 
-class SearchBar(ft.UserControl):
 
-    search_field = ft.Ref[ft.TextField]()
+class SearchBar(ft.UserControl):
     clear_text = ft.Ref[ft.IconButton]()
 
-    def __init__(self, page):
+    def __init__(self, page, ref_search_field=None):
         super().__init__()
         self.page = page
+        if ref_search_field is None:
+            self.search_field = ft.Ref[ft.TextField]()
+        else:
+            self.search_field = ref_search_field
 
-    def on_press_enter(self, _):
+    async def on_press_enter(self, _):
         search_text = "+".join([word for word in self.search_field.current.value.split(" ")])
         if not search_text:
             self.page.show_snack_bar(
@@ -19,21 +22,21 @@ class SearchBar(ft.UserControl):
                     open=True
                 ),
             )
-            self.update()
+            await self.update_async()
         else:
-            self.page.launch_url(f"https://www.google.com/search?q={search_text}")
+            await self.page.launch_url_async(f"https://www.google.com/search?q={search_text}")
 
-    def on_click_cancel(self, _):
+    async def on_click_cancel(self, _):
         self.search_field.current.value = None
         self.clear_text.current.visible = False
-        self.update()
+        await self.update_async()
 
-    def on_textfield_change(self, _):
+    async def on_textfield_change(self, _):
         if self.search_field.current.value:
             self.clear_text.current.visible = True
         else:
             self.clear_text.current.visible = False
-        self.update()
+        await self.update_async()
 
     def build(self):
         return ft.Container(

@@ -1,6 +1,6 @@
 fonts = {
-    "Courgette": "assets/fonts/Courgette-Regular.ttf",
-    "Alkatra": "assets/fonts/Alkatra-Regular.ttf"
+    "Courgette": "/fonts/Courgette-Regular.ttf",
+    "Alkatra": "/fonts/Alkatra-Regular.ttf"
 }
 col_dict = {"sm": 6, "md": 4, "xl": 3}
 medium_url = "https://medium.com/@srang992"

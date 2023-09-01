@@ -1,3 +1,5 @@
-flet
+flet==0.10.0
+flet-fastapi
+uvicorn
 ionicons-python
 custom-flet

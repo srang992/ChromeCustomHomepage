@@ -1,5 +1,10 @@
+import os
 
-analyticsvidhya = "assets/icons/analyticsvidhya.png"
-medium_editor = "assets/icons/medium_editor.svg"
-flet_icon = "assets/icons/flet.png"
-my_logo = "assets/icons/my_logo.png"
+assets_dir = os.path.abspath("assets")
+
+analyticsvidhya = f"/icons/analyticsvidhya.png"
+medium_editor = f"/icons/medium_editor.svg"
+flet_icon = f"/icons/flet.png"
+my_logo = f"/icons/my_logo.png"
+
+
